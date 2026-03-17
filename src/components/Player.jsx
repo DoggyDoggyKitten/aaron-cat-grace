@@ -55,7 +55,7 @@ export default function Player({ post, playing, onPlayingChange, onProgressChang
       el.removeEventListener("ended", onEnded);
       el.removeEventListener("loadedmetadata", onLoaded);
     };
-  }, [onProgressChange, onPlayingChange]);
+  }, [onProgressChange, onPlayingChange, onDurationChange]);
 
   const handleVolume = (e) => {
     const v = parseFloat(e.target.value);
