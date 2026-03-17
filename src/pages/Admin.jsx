@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import cameraCat from "../avatars/camera-cat.png";
 import cameraAaron from "../avatars/cameraAaron.png";
@@ -236,6 +237,7 @@ function AudioDropZone({ file, onFile, onClear, host }) {
 }
 
 export default function Admin() {
+  const navigate = useNavigate();
   const [authed, setAuthed] = useState(sessionStorage.getItem("admin_authed") === "1");
   const [host, setHost] = useState("Aaron");
   const [text, setText] = useState("");
@@ -289,9 +291,9 @@ export default function Admin() {
       });
       if (error) throw error;
 
-      setMessage({ type: "success", text: "发帖成功！" });
-      setText("");
       images.forEach((img) => URL.revokeObjectURL(img.preview));
+      setTimeout(() => navigate("/"), 300);
+      setText("");
       setImages([]);
       setAudioFile(null);
     } catch (err) {

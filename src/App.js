@@ -14,17 +14,19 @@ export default function App() {
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  useEffect(() => {
-    async function fetchPosts() {
-      const { data, error } = await supabase
-        .from("posts")
-        .select("*")
-        .order("created_at", { ascending: false });
-      if (!error) setPosts(data);
-      setLoading(false);
-    }
-    fetchPosts();
+  const fetchPosts = useCallback(async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from("posts")
+      .select("*")
+      .order("created_at", { ascending: false });
+    if (!error) setPosts(data);
+    setLoading(false);
   }, []);
+
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
 
   const handlePlay = useCallback((post) => {
     if (currentPost?.id === post.id) {
@@ -52,13 +54,16 @@ export default function App() {
           setPlaying={setPlaying}
           setProgress={setProgress}
           setDuration={setDuration}
+          onMount={fetchPosts}
         />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
-function Feed({ posts, loading, currentPost, playing, progress, duration, handlePlay, setPlaying, setProgress, setDuration }) {
+function Feed({ posts, loading, currentPost, playing, progress, duration, handlePlay, setPlaying, setProgress, setDuration, onMount }) {
+  useEffect(() => { onMount(); }, [onMount]);
+
   return (
     <div className="h-screen flex flex-col overflow-hidden" style={{ backgroundColor: "#1f1f1f" }}>
 
