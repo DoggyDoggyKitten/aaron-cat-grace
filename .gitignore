@@ -1,19 +1,19 @@
-# Dependencies
-node_modules/
-
-# Environment variables (NEVER commit these)
+# Secrets (real keys live only in .env)
 .env
 .env.local
-.env.production
 .env.*.local
 
-# Build output
-build/
+# Python
+__pycache__/
+*.pyc
+.venv/
 
-# System files
+# Generated episodes (audio + scripts)
+output/
+
+# Node (web/ has its own .gitignore too)
+node_modules/
+
+# Local tool settings and system files
+.claude/settings.local.json
 .DS_Store
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

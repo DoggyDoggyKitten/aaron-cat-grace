@@ -1,0 +1,21 @@
+jokes:
+  - id: "joke_001"
+    host: "Aaron"
+    setup: "请问孙悟空最喜欢什么水果？"
+    punchline: "榴莲。因为有石猴，有石猴，宁愿选择榴莲不放手。"
+    homophone_note: '"有石猴"谐音周华健《花心》歌词"有谁，有谁，宁愿选择留恋不放手"'
+    used_in: []
+
+  - id: "joke_002"
+    host: "Cat"
+    setup: "请问蚂蚁有几种笑声？"
+    punchline: "四种。蚂蚁呀黑、蚂蚁呀胡、蚂蚁呀吼、蚂蚁呀哈哈。"
+    homophone_note: '"蚂蚁呀黑/胡/吼/哈哈"谐音Beyond《光辉岁月》歌词"马已牙黑/胡/吼/哈哈"，即"马已牙——不——原来是歌词"'
+    used_in: []
+
+  - id: "joke_003"
+    host: "Grace"
+    setup: "小蒜、中蒜、大蒜，谁最会谈恋爱？"
+    punchline: "中蒜。因为——中，后来，我总算学会了如何去爱。"
+    homophone_note: '"中蒜"谐音梁静茹《勇气》歌词"终，后来，我总算学会了如何去爱"'
+    used_in: []

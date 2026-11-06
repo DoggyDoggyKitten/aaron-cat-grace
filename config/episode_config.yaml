@@ -1,0 +1,9 @@
+episode_id: "ep001"
+title: "第一期：谐音梗大赏"
+selected_jokes:
+  - "joke_001"   # Aaron 讲
+  - "joke_002"   # Grace 讲
+  - "joke_003"   # Cat 讲
+background_music: "data/music/background.mp3"
+include_background_music: false   # 先设为 false，等你放好背景音乐再改为 true
+output_filename: "episode_001.mp3"
